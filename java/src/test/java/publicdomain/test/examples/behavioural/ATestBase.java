@@ -12,7 +12,7 @@ import publicdomain.test.snippets.fixtures.SimulatedTimeFixture;
  * <p>
  * As a recommendation, fixtures should represent collaborators on the external interfaces of the system/component.
  *
- * @param <SubType>
+ * @param <SubType> The test type deriving from this class.
  */
 public abstract class ATestBase<SubType extends ATestBase<SubType>> implements Steps<SubType> {
     private final SimulatedTimeFixture time = new SimulatedTimeFixture();

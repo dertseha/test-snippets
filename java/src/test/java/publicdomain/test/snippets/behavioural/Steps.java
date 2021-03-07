@@ -37,7 +37,7 @@ package publicdomain.test.snippets.behavioural;
  * }
  * </pre>
  *
- * @param <SubType> The type that this interface implements.
+ * @param <SubType> The test type deriving from this interface.
  */
 public interface Steps<SubType extends Steps<SubType>> {
     /**
