@@ -103,7 +103,7 @@ public interface Steps<SubType extends Steps<SubType>> {
      * {@code
      * then().database().shouldHaveActiveUserCountOf(1);
      * then().client().shouldReceiveAnErrorResponse();
-     * when().server().shouldHaveAPendingLogInRequest();
+     * then().server().shouldHaveAPendingLogInRequest();
      * }
      * </pre>
      *
