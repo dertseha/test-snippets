@@ -1,7 +1,7 @@
 namespace PublicDomain.TestSnippets.Behavioural
 {
     /// <summary>
-    /// <see cref="Steps{SubType}"/> provides a standard set of starting words for test steps. These are based on the
+    /// <see cref="Steps{TSubType}"/> provides a standard set of starting words for test steps. These are based on the
     /// <a href="https://en.wikipedia.org/wiki/Behavior-driven_development#Behavioral_specifications">behavioural specifications</a>,
     /// used in Behaviour-driven development (BDD). Note that using this does NOT make your tests BDD-tests.
     /// There is far more to BDD than using the three steps of Given-When-Then.
@@ -16,7 +16,7 @@ namespace PublicDomain.TestSnippets.Behavioural
     /// in the implementing test.
     /// </summary>
     /// <example>
-    /// abstract class ATestBase&lt;SubType&gt;: Steps&lt;SubType&gt; where SubType: ATestBase&lt;SubType&gt;
+    /// abstract class ATestBase&lt;TSubType&gt;: Steps&lt;TSubType&gt; where TSubType: ATestBase&lt;TSubType&gt;
     /// {
     ///    // ...
     ///    public Server Server()
@@ -36,8 +36,8 @@ namespace PublicDomain.TestSnippets.Behavioural
     ///    }
     /// }
     /// </example>
-    /// <typeparam name="SubType">The test type deriving from this class</typeparam>
-    public abstract class Steps<SubType> where SubType: Steps<SubType>
+    /// <typeparam name="TSubType">The test type deriving from this class</typeparam>
+    public abstract class Steps<TSubType> where TSubType: Steps<TSubType>
     {
         /// <summary>
         /// Given steps are those setting up the system/instance under test. They arrange for the actual act to happen.
@@ -54,8 +54,8 @@ namespace PublicDomain.TestSnippets.Behavioural
         /// Given().Server().KnowsUser();
         /// Given().Client().LoggedIn();
         /// </example>
-        /// <returns>this as SubType</returns>
-        public SubType Given() => ThisAsSubType();
+        /// <returns>this as TSubType</returns>
+        public TSubType Given() => ThisAsSubType();
 
         /// <summary>
         /// When steps are those performing the act that triggers the test subject for the action that is being tested.
@@ -70,8 +70,8 @@ namespace PublicDomain.TestSnippets.Behavioural
         /// When().MessageSystem().DeliversMessage();
         /// When().Server().ClosesConnections();
         /// </example>
-        /// <returns>this as SubType</returns>
-        public SubType When() => ThisAsSubType();
+        /// <returns>this as TSubType</returns>
+        public TSubType When() => ThisAsSubType();
 
         /// <summary>
         /// Then steps perform the assertions. They verify that certain conditions are reached.
@@ -88,19 +88,19 @@ namespace PublicDomain.TestSnippets.Behavioural
         /// Then().Client().ShouldReceiveAnErrorResponse();
         /// Then().Server().ShouldHaveAPendingLogInRequest();
         /// </example>
-        /// <returns>this as SubType</returns>
-        public SubType Then() => ThisAsSubType();
+        /// <returns>this as TSubType</returns>
+        public TSubType Then() => ThisAsSubType();
 
         /// <summary>
         /// And provides an alternative to avoid repeating the same introduction step method.
         /// </summary>
         /// <returns></returns>
-        public SubType And() => ThisAsSubType();
+        public TSubType And() => ThisAsSubType();
         
         /// <summary>
         /// This method exists to have just one place where the downcast is performed.
         /// </summary>
-        /// <returns>this, cast to the type of SubType</returns>
-        private SubType ThisAsSubType() => (SubType) this;
+        /// <returns>this, cast to the type of TSubType</returns>
+        private TSubType ThisAsSubType() => (TSubType) this;
     }
 }

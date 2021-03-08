@@ -7,7 +7,7 @@ namespace PublicDomain.TestSnippets.System
     /// 
     /// The start value is an arbitrary value.
     /// </summary>
-    public class SimulatedTime: Time
+    public class SimulatedTime: ITime
     {
         public DateTime Now { get; set; } = new(2010, 1, 1, 12, 0, 0, DateTimeKind.Utc);
 
