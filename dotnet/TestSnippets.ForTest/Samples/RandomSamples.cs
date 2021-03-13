@@ -7,10 +7,10 @@ namespace PublicDomain.TestSnippets.Samples
         private static readonly Random Rand = new(Environment.TickCount);
 
         public static string ARandomName() {
-            return SomeFirstName() + " Doe";
+            return SomeGivenName() + " Doe";
         }
 
-        public static String SomeFirstName() {
+        public static String SomeGivenName() {
             string[] names = {"Alice", "Bob", "Carol", "David" };
             return names[ARandomIndexFor(names.Length)];
         }
