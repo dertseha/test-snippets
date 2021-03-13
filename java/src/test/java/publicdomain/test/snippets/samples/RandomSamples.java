@@ -6,11 +6,11 @@ public class RandomSamples {
     private static final SecureRandom RAND = new SecureRandom();
 
     public static String aRandomName() {
-        return someFirstName() + " Doe";
+        return someGivenName() + " Doe";
     }
 
-    public static String someFirstName() {
-        final String[] names = new String[]{"Alice", "Bob", "Carol", "David" };
+    public static String someGivenName() {
+        final String[] names = new String[]{"Alice", "Bob", "Carol", "David"};
         return names[aRandomIndexFor(names.length)];
     }
 
